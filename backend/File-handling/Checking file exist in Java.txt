@@ -1,0 +1,11 @@
+import java.nio.file.*;
+
+public class FileCheckExample {
+    public static void main(String[] args) {
+        if (Files.exists(Paths.get("example.txt"))) {
+            System.out.println("File exists.");
+        } else {
+            System.out.println("File does not exist.");
+        }
+    }
+}
