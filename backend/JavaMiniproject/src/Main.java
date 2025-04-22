@@ -7,7 +7,7 @@ public class Main {
     static HashMap<String, String[]> parkingSlots = new HashMap<>();
 
     static void welcome() {
-        System.out.println("\n \uD83D\uDE97 Welcome University Parking System project \uD83C\uDFEB \n");
+        System.out.println("\n \uD83D\uDE97 Welcome University Parking System \uD83C\uDFEB \n");
         System.out.println("\n" +
                            "   ____  _    _  _____ _      \n" +
                            "  / __ \\| |  | |/ ____| |     \n" +
@@ -19,8 +19,12 @@ public class Main {
                            "                              \n");
     }
 
+    static void clearScreen() {
+        for (int i = 0; i < 30; i++) System.out.println();
+        System.out.println("==============================================");
+    }
+
     static void showLoginMenu() {
-        System.out.println();
         System.out.println("1. Admin");
         System.out.println("2. User");
         System.out.println("0. Exit");
@@ -28,7 +32,6 @@ public class Main {
     }
 
     static void adminMainMenu() {
-        System.out.println();
         System.out.println("1. Add Parking Slots");
         System.out.println("2. Remove Parking Slots");
         System.out.println("3. View Available Slots");
@@ -39,7 +42,6 @@ public class Main {
     }
 
     static void userMainMenu() {
-        System.out.println();
         System.out.println("1. View Available Slots");
         System.out.println("2. Book a Slot");
         System.out.println("3. Cancel a Booking");
@@ -60,12 +62,13 @@ public class Main {
                 .filter(details -> "Available".equals(details[0]))
                 .count();
         if (availableCount == 0) {
-            System.out.println("No available slots.");
+            System.out.println("\nNo available slots.\n");
         } else {
-            System.out.println("Available Parking Slots:");
+            System.out.println("\nAvailable Parking Slots:\n");
             parkingSlots.forEach((id, details) -> {
                 if ("Available".equals(details[0])) {
                     System.out.println("Slot ID: " + id + ", Faculty: " + details[1]);
+                    System.out.println();
                 }
             });
         }
@@ -83,6 +86,7 @@ public class Main {
 
                 switch (logMenu) {
                     case 1: // Admin
+                        clearScreen();
                         boolean adminExit = false;
                         welcomeForAdmin();
                         while (!adminExit) {
@@ -100,21 +104,21 @@ public class Main {
 
                                         if (!parkingSlots.containsKey(slotID)) {
                                             parkingSlots.put(slotID, new String[]{"Available", faculty});
-                                            System.out.println("Slot added successfully!.");
+                                            System.out.println("\nSlot added successfully!.\n");
                                         } else {
-                                            System.out.println("Slot ID is already registered.");
+                                            System.out.println("\nSlot ID is already registered.\n");
                                         }
                                         break;
 
                                     case 2: // Remove Parking Slots
-                                        System.out.print("Please enter the SlotID to remove: ");
+                                        System.out.print("\nPlease enter the SlotID to remove: ");
                                         String removeSlotID = scn.next();
 
                                         if (parkingSlots.containsKey(removeSlotID)) {
                                             parkingSlots.remove(removeSlotID);
-                                            System.out.println("Slot removed successfully!.");
+                                            System.out.println("\nSlot removed successfully!.\n");
                                         } else {
-                                            System.out.println("Slot is not available right now.");
+                                            System.out.println("\nSlot is not available right now.\n");
                                         }
                                         break;
 
@@ -129,9 +133,9 @@ public class Main {
                                         String bookSlotID = scn.next();
                                         if (parkingSlots.containsKey(bookSlotID) && parkingSlots.get(bookSlotID)[0].equals("Available")) {
                                             parkingSlots.get(bookSlotID)[0] = "Booked";
-                                            System.out.println("Slot booked successfully.");
+                                            System.out.println("\nSlot booked successfully.\n");
                                         } else {
-                                            System.out.println("Slot ID not found or currently filled.");
+                                            System.out.println("\nSlot ID not found or currently filled.\n");
                                         }
                                         break;
 
@@ -140,18 +144,19 @@ public class Main {
                                         String cancelSlotID = scn.next();
                                         if (parkingSlots.containsKey(cancelSlotID) && parkingSlots.get(cancelSlotID)[0].equals("Booked")) {
                                             parkingSlots.get(cancelSlotID)[0] = "Available";
-                                            System.out.println("Booking canceled successfully.");
+                                            System.out.println("\nBooking canceled successfully.\n");
                                         } else {
-                                            System.out.println("Slot ID not available or not booked.");
+                                            System.out.println("\nSlot ID not available or not booked.\n");
                                         }
                                         break;
 
                                     case 0:
                                         adminExit = true;
+                                        clearScreen();
                                         break;
 
                                     default:
-                                        System.out.println("Invalid choice. Try again.");
+                                        System.out.println("\nInvalid choice. Try again.\n");
                                 }
                             } catch (InputMismatchException e) {
                                 System.out.println("Invalid input. Please enter a number.");
@@ -164,6 +169,7 @@ public class Main {
                         break;
 
                     case 2: // User
+                        clearScreen();
                         boolean userExit = false;
                         welcomeForUser();
                         while (!userExit) {
@@ -183,9 +189,9 @@ public class Main {
                                         String bookSlotID = scn.next();
                                         if (parkingSlots.containsKey(bookSlotID) && parkingSlots.get(bookSlotID)[0].equals("Available")) {
                                             parkingSlots.get(bookSlotID)[0] = "Booked";
-                                            System.out.println("Slot booked successfully.");
+                                            System.out.println("\nSlot booked successfully.\n");
                                         } else {
-                                            System.out.println("Slot ID not found or already booked.");
+                                            System.out.println("\nSlot ID not found or already booked.\n");
                                         }
                                         break;
 
@@ -194,21 +200,22 @@ public class Main {
                                         String cancelSlotID = scn.next();
                                         if (parkingSlots.containsKey(cancelSlotID) && parkingSlots.get(cancelSlotID)[0].equals("Booked")) {
                                             parkingSlots.get(cancelSlotID)[0] = "Available";
-                                            System.out.println("Booking canceled successfully.");
+                                            System.out.println("\nBooking canceled successfully.\n");
                                         } else {
-                                            System.out.println("Slot ID not found or not booked.");
+                                            System.out.println("\nSlot ID not found or not booked.\n");
                                         }
                                         break;
 
                                     case 0:
                                         userExit = true;
+                                        clearScreen();
                                         break;
 
                                     default:
-                                        System.out.println("Invalid choice. Try again.");
+                                        System.out.println("\nInvalid choice. Try again.\n");
                                 }
                             } catch (InputMismatchException e) {
-                                System.out.println("Invalid input. Please enter a number.");
+                                System.out.println("\nInvalid input. Please enter a number.\n");
                                 scn.nextLine();
                             } catch (Exception e) {
                                 System.out.println("An error occurred: " + e.getMessage());
@@ -219,14 +226,14 @@ public class Main {
 
                     case 0:
                         exit = true;
-                        System.out.println("Exiting the system. Goodbye!");
+                        System.out.println("\nExiting the system. See You Again!\n");
                         break;
 
                     default:
-                        System.out.println("Invalid choice. Try again.");
+                        System.out.println("\nInvalid choice. Try again.\n");
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Invalid input. Please enter a number.");
+                System.out.println("\nInvalid input. Please enter a number.\n");
                 scn.nextLine(); // Clear invalid input
             } catch (Exception e) {
                 System.out.println("An error occurred: " + e.getMessage());
