@@ -20,6 +20,7 @@ public class Main {
     }
 
     static void showLoginMenu() {
+        System.out.println();
         System.out.println("1. Admin");
         System.out.println("2. User");
         System.out.println("0. Exit");
@@ -27,6 +28,7 @@ public class Main {
     }
 
     static void adminMainMenu() {
+        System.out.println();
         System.out.println("1. Add Parking Slots");
         System.out.println("2. Remove Parking Slots");
         System.out.println("3. View Available Slots");
@@ -37,6 +39,7 @@ public class Main {
     }
 
     static void userMainMenu() {
+        System.out.println();
         System.out.println("1. View Available Slots");
         System.out.println("2. Book a Slot");
         System.out.println("3. Cancel a Booking");
