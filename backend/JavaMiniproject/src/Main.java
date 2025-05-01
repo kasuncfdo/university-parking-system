@@ -9,18 +9,19 @@ public class Main {
     static void welcome() {
         System.out.println("\n \uD83D\uDE97 Welcome University Parking System \uD83C\uDFEB \n");
         System.out.println("\n" +
-                           "   ____  _    _  _____ _      \n" +
-                           "  / __ \\| |  | |/ ____| |     \n" +
-                           " | |  | | |  | | (___ | |     \n" +
-                           " | |  | | |  | |\\___ \\| |     \n" +
-                           " | |__| | |__| |____) | |____ \n" +
-                           "  \\____/ \\____/|_____/|______|\n" +
-                           "                              \n" +
-                           "                              \n");
+                "   ____  _    _  _____ _      \n" +
+                "  / __ \\| |  | |/ ____| |     \n" +
+                " | |  | | |  | | (___ | |     \n" +
+                " | |  | | |  | |\\___ \\| |     \n" +
+                " | |__| | |__| |____) | |____ \n" +
+                "  \\____/ \\____/|_____/|______|\n" +
+                "                              \n" +
+                "                              \n");
     }
 
     static void clearScreen() {
-        for (int i = 0; i < 30; i++) System.out.println();
+        for (int i = 0; i < 30; i++)
+            System.out.println();
         System.out.println("==============================================");
     }
 
@@ -57,7 +58,7 @@ public class Main {
         System.out.println("\nWelcome User\n");
     }
 
-    static void viewavailableslot(){
+    static void viewavailableslot() {
         long availableCount = parkingSlots.values().stream()
                 .filter(details -> "Available".equals(details[0]))
                 .count();
@@ -103,7 +104,7 @@ public class Main {
                                         String faculty = scn.next();
 
                                         if (!parkingSlots.containsKey(slotID)) {
-                                            parkingSlots.put(slotID, new String[]{"Available", faculty});
+                                            parkingSlots.put(slotID, new String[] { "Available", faculty });
                                             System.out.println("\nSlot added successfully!.\n");
                                         } else {
                                             System.out.println("\nSlot ID is already registered.\n");
@@ -131,7 +132,8 @@ public class Main {
                                     case 4: // Book a Slot
                                         System.out.print("Enter Slot ID to book: ");
                                         String bookSlotID = scn.next();
-                                        if (parkingSlots.containsKey(bookSlotID) && parkingSlots.get(bookSlotID)[0].equals("Available")) {
+                                        if (parkingSlots.containsKey(bookSlotID)
+                                                && parkingSlots.get(bookSlotID)[0].equals("Available")) {
                                             parkingSlots.get(bookSlotID)[0] = "Booked";
                                             System.out.println("\nSlot booked successfully.\n");
                                         } else {
@@ -142,7 +144,8 @@ public class Main {
                                     case 5: // Cancel Booking
                                         System.out.print("Enter Slot ID to cancel booking: ");
                                         String cancelSlotID = scn.next();
-                                        if (parkingSlots.containsKey(cancelSlotID) && parkingSlots.get(cancelSlotID)[0].equals("Booked")) {
+                                        if (parkingSlots.containsKey(cancelSlotID)
+                                                && parkingSlots.get(cancelSlotID)[0].equals("Booked")) {
                                             parkingSlots.get(cancelSlotID)[0] = "Available";
                                             System.out.println("\nBooking canceled successfully.\n");
                                         } else {
@@ -187,7 +190,8 @@ public class Main {
                                     case 2: // Book a Slot
                                         System.out.print("Enter Slot ID to book: ");
                                         String bookSlotID = scn.next();
-                                        if (parkingSlots.containsKey(bookSlotID) && parkingSlots.get(bookSlotID)[0].equals("Available")) {
+                                        if (parkingSlots.containsKey(bookSlotID)
+                                                && parkingSlots.get(bookSlotID)[0].equals("Available")) {
                                             parkingSlots.get(bookSlotID)[0] = "Booked";
                                             System.out.println("\nSlot booked successfully.\n");
                                         } else {
@@ -195,10 +199,11 @@ public class Main {
                                         }
                                         break;
 
-                                    case 3: //Cancel booking
+                                    case 3: // Cancel booking
                                         System.out.print("Enter Slot ID to cancel booking: ");
                                         String cancelSlotID = scn.next();
-                                        if (parkingSlots.containsKey(cancelSlotID) && parkingSlots.get(cancelSlotID)[0].equals("Booked")) {
+                                        if (parkingSlots.containsKey(cancelSlotID)
+                                                && parkingSlots.get(cancelSlotID)[0].equals("Booked")) {
                                             parkingSlots.get(cancelSlotID)[0] = "Available";
                                             System.out.println("\nBooking canceled successfully.\n");
                                         } else {
@@ -244,13 +249,3 @@ public class Main {
         scn.close();
     }
 }
-
-
-
-
-
-
-
-
-
-

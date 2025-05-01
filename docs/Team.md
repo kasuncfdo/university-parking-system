@@ -1,45 +1,49 @@
-# 🎯 **Team Responsibilities – University Parking System** 🚀  
+# 🎯 **Team Responsibilities – University Parking System** 🚀
 
-## 🗄️ **Database Team** 📊  
+## 🗄️ **Database Team** 📊
+
 🔹 **Kasun**  
 🔹 **Maddya**  
 🔹 **Nimesh**  
-🔹 **Shwetha**  
+🔹 **Shwetha**
 
-📌 *Designs & manages database schema, queries, and optimizations.*  
-
----  
-
-## ⚙️ **Backend Development** 💻  
-👨‍💻 *All 7 Members*  
-
-📌 *Develops core logic, APIs, and integrates the system.*  
-
----  
-
-## 🎨 **Frontend Development** 🌐  
-🔹 **Buddhika**  
-🔹 **Kasun**  
-
-📌 *Builds UI/UX, implements Google Maps integration & user dashboards.*  
-
----  
-
-## 🧪 **Quality Assurance (Testing)** 🛠  
-🔹 **Buddhika**  
-🔹 **Chanaka**  
-🔹 **Imesha**  
-
-📌 *Tests functionality, finds & fixes bugs, ensures smooth performance.*  
-
----  
-
-## 📄 **Documentation Team** 📝  
-🔹 **Kasun**  
-🔹 **Buddhika**  
-🔹 **Maddya**  
-
-📌 *Writes technical documentation, guides, and maintains records.*  
+📌 _Designs & manages database schema, queries, and optimizations._
 
 ---
 
+## ⚙️ **Backend Development** 💻
+
+👨‍💻 _All 7 Members_
+
+📌 _Develops core logic, APIs, and integrates the system._
+
+---
+
+## 🎨 **Frontend Development** 🌐
+
+🔹 **Buddhika**  
+🔹 **Kasun**
+
+📌 _Builds UI/UX, implements Google Maps integration & user dashboards._
+
+---
+
+## 🧪 **Quality Assurance (Testing)** 🛠
+
+🔹 **Buddhika**  
+🔹 **Chanaka**  
+🔹 **Imesha**
+
+📌 _Tests functionality, finds & fixes bugs, ensures smooth performance._
+
+---
+
+## 📄 **Documentation Team** 📝
+
+🔹 **Kasun**  
+🔹 **Buddhika**  
+🔹 **Maddya**
+
+📌 _Writes technical documentation, guides, and maintains records._
+
+---
