@@ -6,20 +6,23 @@
 
 ## 📌 Features
 
-✅ **Java HashMap Integration** – Locate parking slots easily  
-✅ **User Authentication** – login method for staff admin & user
-✅ **Admin Panel** – Manage slots & reservations  
-✅ **Live Slot Availability** – Real-time updates on parking status
+- ✅ **Java HashMap Integration** – Locate parking slots easily  
+- ✅ **User Authentication** – login method for staff admin & user
+- ✅ **Admin Panel** – Manage slots & reservations  
+- ✅ **Live Slot Availability** – Real-time updates on parking status
 
 ---
 
 ## 🧰 Prerequisites
 
+``` 
+
 To run the System, ensure you have the following installed:
 
-- 🧠 **IntelliJ IDEA** – Recommended IDE for development
-- ☕ **Java JDK 21 or higher** – Required to compile and run the application
-- 💻 **Terminal / Command Line Interface** – To run and manage via CLI
+- 🧠 IntelliJ IDEA – Recommended IDE for development
+- ☕ Java JDK 21 or higher – Required to compile and run the application
+- 💻 Terminal / Command Line Interface – To run and manage via CLI
+```
 
 ---
 
